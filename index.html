@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+                <title>VSAG</title>
+                <!-- SET: SCRIPTS -->
+                <!-- Pre set by XHTML CHOP -->
+                <script src="js/jquery-1.8.3.js" type="text/javascript"></script>
+                <script src="js/css3-mediaqueries.js" type="text/javascript"></script>
+                <script src="js/modernizr.js" type="text/javascript"></script>
+                <script type="text/javascript" src="js/jquery.ddslick.js"> </script>
+                <script type="text/javascript" src="js/jquery.sidr.min.js"> </script>
+                
+                <!-- SET: FAVICON -->
+                <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+                    <!-- END: FAVICON -->
+                    
+                    <!-- SET: STYLESHEET -->
+                    <link rel="stylesheet" href="css/jquery.sidr.dark.css">
+                        <!-- <link rel="stylesheet" type="text/css" href="css/dd.css" > -->
+                        <link rel="stylesheet" type="text/css" href="css/ddSlick.css" >
+                            <link href="css/style.css" rel="stylesheet" type="text/css" media="all">
+                                <link href="css/responsive.css" rel="stylesheet" type="text/css" media="all">
+                                    <!-- END: STYLESHEET -->
+                                    
+                                    <!-- Custom Actualize Studio JS Files -->
+                                    <script type"text/javascript" src="cordova.js"></script>
+                                    <script type"text/javascript" src="cordova_plugins.js"></script>
+                                    <script type="text/javascript">
+                                        
+                                        
+                                        //login ajax to send over user and pass LS
+                                        function handleLogin() {
+                                            var form = $("#loginForm");
+                                            //disable the button so we can't resubmit while we wait
+                                            $("#submitButton",form).attr("disabled","disabled");
+                                            var e = $("#user", form).val();
+                                            var p = $("#password", form).val();
+                                            
+                                            console.log("click");
+                                            if(e != "" && p != "") {
+                                                var str = form.serialize();
+                                                //McDOn(str);
+                                                $.ajax({
+                                                       type: 'POST',
+                                                       url: 'http://actualizevps.com/vsag/admin/loginmobile.php',
+                                                       crossDomain: true,
+                                                       data:  {user: e, password :p},
+                                                       dataType: 'json',
+                                                       async: false,
+                                                       success: function (response){
+                                                       //alert ("response");
+                                                       if (response.success) {
+                                                       //alert("you're logged in");
+                                                       window.localStorage["user"] = e;
+                                                       //window.localStorage["password"] = md5(p);
+                                                       //window.localStorage["UID"] = data.uid;
+                                                       window.location = "create.html";
+                                                       }
+                                                       else {
+                                                       
+                                                       alert("Your login failed");
+                                                       //window.location("main.html");
+                                                       location.reload();
+                                                       }
+                                                       
+                                                       
+                                                       },
+                                                       error: function(error){
+                                                       //alert(response.success);
+                                                       alert('Could not connect to the database' + error);
+                                                       window.location = "main.html";
+                                                       }
+                                                       });
+                                            }
+                                            else {
+                                                //if the email and password is empty
+                                                alert("You must enter user and password");
+                                                
+                                            }
+                                            return false;
+                                        }
+                                    
+                                        </script>
+                                    <!-- Header JAVASCRIPT -->
+                                    
+                                    <!-- END: SCRIPTS -->
+                                    
+                                    <!--[if lte IE 8]>
+                                     <style type="text/css">
+                                     .form input {behavior:url(PIE.htc); border-radius: 4px; position: relative; box-shadow: 0px 1px 3px 0px rgba(119, 119, 119, 0.75) !important; z-index: 0;}
+                                     .bottom-button a {behavior:url(PIE.htc); border-radius: 4px; position: relative; box-shadow: 0px 1px 3px 0px rgba(119, 119, 119, 0.75) !important;}
+                                     #sidr input {behavior:url(PIE.htc); border-radius: 4px; position: relative; box-shadow: 0px 1px 3px 0px rgba(119, 119, 119, 0.75) !important;}
+                                     .dropdown2 {behavior:url(PIE.htc); position: relative; border-radius: 4px; box-shadow: 0px 1px 3px 0px rgba(119, 119, 119, 0.75) !important;}
+                                     .dropdown2 .ddChild {behavior:url(PIE.htc); border-radius: 4px; box-shadow: 0px 1px 3px 0px rgba(119, 119, 119, 0.75) !important;}
+                                     </style>
+                                     <![endif]-->
+                                    
+                                    </head>
+    <body>
+        <!-- wrapper starts -->
+        <div class="wrapper">
+            <div class="background"><img src="img/ipad-bg.jpg" width="874" height="1137" alt=""></div>
+            <!-- container starts -->
+            <div class="container">
+                <div class="main-container">
+                    
+                    <!-- Header Starts -->
+                    <div id="header"> <a href="#" id="logo"><img src="img/logo.png" width="151" height="197" alt=""></a>
+                        <div id="main-form">
+                            <form id="loginForm">
+                                <input name="user" type="email" placeholder="USER" id="user" value="actualize">
+                                    <input name="password" type="password" placeholder="PASSWORD" id="password" value="actualize0424">
+                                        <input name="" type="button" onclick="handleLogin();" class="button" id="storeData" value="Submit">
+                                            </form>
+                        </div>
+                    </div>
+                    <!-- Header ends -->
+                    
+                    <!-- maincontent Starts -->
+                    <div class="maincontent"> </div>
+                    <!-- maincontent ends -->
+                    
+                    <!-- footer starts -->
+                    <div id="footer"> </div>
+                    <!-- footer ends -->
+                    
+                </div>
+                <!-- container ends -->
+                
+            </div>
+            <!-- main-container ends -->
+            
+        </div>
+        <!-- wrapper ends -->
+        
+    </body></html>

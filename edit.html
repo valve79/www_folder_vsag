@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+                <title>VSAG</title>
+                <!-- SET: SCRIPTS -->
+                <!-- Pre set by XHTML CHOP -->
+                <script src="js/jquery-1.8.3.js" type="text/javascript"></script>
+                <script src="js/css3-mediaqueries.js" type="text/javascript"></script>
+                <script src="js/modernizr.js" type="text/javascript"></script>
+                <script type="text/javascript" src="js/jquery.ddslick.js"> </script>
+                <script type="text/javascript" src="js/jquery.sidr.min.js"> </script>
+                
+                <!-- SET: FAVICON -->
+                <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+                <!-- END: FAVICON -->
+                    
+                <!-- SET: STYLESHEET -->
+                <link rel="stylesheet" href="css/jquery.sidr.dark.css">
+                <!-- <link rel="stylesheet" type="text/css" href="css/dd.css" > -->
+                <link rel="stylesheet" type="text/css" href="css/ddSlick.css" >
+                <link href="css/style.css" rel="stylesheet" type="text/css" media="all">
+                <link href="css/responsive.css" rel="stylesheet" type="text/css" media="all">
+                <!-- END: STYLESHEET -->
+                                    
+                <!-- Custom Actualize Studio JS Files -->
+                <script type"text/javascript" src="cordova.js"></script>
+                <script type"text/javascript" src="cordova_plugins.js"></script>
+                <script src="js/actualizeCamera.js" type="text/javascript"></script>
+                <script type="text/javascript">
+                    $(document).ready(function() {
+                    $('#storeData').on('click', function() {
+                                         if (localStorage) {
+                                            localStorage.setItem("flag", "set");
+                                            var data = $('#basicInfo').serializeArray();
+                                            $.each(data, function (i, obj) {
+                                                // HTML5 magic
+                                                localStorage.setItem(obj.name, obj.value);
+                                            });
+                                         }
+                                       
+                    });
+                    if (localStorage.getItem("flag") == "set") {
+                    // Same iteration stuff as before
+                    var data = $("#basicInfo").serializeArray();
+                    // Only the only way we can select is by the name attribute, but jQuery is down with that.
+                    $.each(data, function (i, obj) {
+                        $("[name='" + obj.name + "']").val(localStorage.getItem(obj.name));
+                        //one more line of code to say take the value of the previous element and
+                        });
+                    }
+                                      
+                });
+                
+                $(window)
+                </script>
+                <!-- Header JAVASCRIPT -->
+                                    
+                <!-- END: SCRIPTS -->
+                                    
+                <!--[if lte IE 8]>
+                <style type="text/css">
+                .form input {behavior:url(PIE.htc); border-radius: 4px; position: relative; box-shadow: 0px 1px 3px 0px rgba(119, 119, 119, 0.75) !important; z-index: 0;}
+                .bottom-button a {behavior:url(PIE.htc); border-radius: 4px; position: relative; box-shadow: 0px 1px 3px 0px rgba(119, 119, 119, 0.75) !important;}
+                #sidr input {behavior:url(PIE.htc); border-radius: 4px; position: relative; box-shadow: 0px 1px 3px 0px rgba(119, 119, 119, 0.75) !important;}
+                .dropdown2 {behavior:url(PIE.htc); position: relative; border-radius: 4px; box-shadow: 0px 1px 3px 0px rgba(119, 119, 119, 0.75) !important;}
+                .dropdown2 .ddChild {behavior:url(PIE.htc); border-radius: 4px; box-shadow: 0px 1px 3px 0px rgba(119, 119, 119, 0.75) !important;}
+                </style>
+                <![endif]-->
+                
+    </head>
+    <body>
+    <!-- wrapper starts -->
+        <div class="wrapper">
+        <div class="background"><img src="img/ipad-bg.jpg" width="874" height="1137" alt=""></div>
+        <!-- container starts -->
+        <div class="container">
+        <div class="main-container">
+                    
+                    <!-- Header Starts -->
+                    <div id="header"> <a href="#" id="logo"><img src="img/logo.png" width="151" height="197" alt=""></a>
+                        <div id="main-form">
+                            <form id="basicInfo" action="kitchen/kitchen1.html" method="post">
+                                <input name="client" type="text" placeholder="CLIENT" id="client">
+                                <input name="email" type="email" placeholder="CLIENT EMAIL" id="email">
+                                <input name="number" type="text" placeholder="CLIENT PHONE NUMBER" id="number">
+                                <input name="consultant" type="text" placeholder="CONSULTANT" id="consultant">
+                                <input name="date" id="date">
+                                <script type="text/javascript">
+                                    var d = new Date();
+                                    var curr_date = d.getDate();
+                                    var curr_month = d.getMonth();
+                                    curr_month++;
+                                    var curr_year = d.getFullYear();
+                                    document.getElementById("date").value = curr_month + "/" + curr_date + "/" + curr_year;
+                                </script>
+                                <input name="" type="button" class="button" id="storeData" value="Resume Report" onclick="history.go(-1);">
+                            </form>
+                        </div>
+                    </div>
+                    <!-- Header ends -->
+                    
+                    <!-- maincontent Starts -->
+                    <div class="maincontent"> </div>
+                    <!-- maincontent ends --> 
+                    
+                    <!-- footer starts -->
+                    <div id="footer"> </div>
+                    <!-- footer ends -->
+
+                </div>
+                <!-- container ends --> 
+                
+            </div>
+            <!-- main-container ends --> 
+            
+        </div>
+        <!-- wrapper ends -->
+        
+    </body></html>

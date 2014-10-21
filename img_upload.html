@@ -1,0 +1,177 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+            <title>PhoneGap</title>
+            <style type="text/css">
+                div {border: 1px solid black;}
+                input {width: 100%;}
+                </style>
+            <script src="js/jquery-1.8.3.js" type="text/javascript"></script>
+            <script type"text/javascript" src="cordova.js"></script>
+            <script type"text/javascript" src="cordova_plugins.js"></script>
+            <script type="text/javascript" src="js/submitData.js"></script>
+           <!-- <script src="js/actualizeCameraDemoOnly.js" type="text/javascript"></script>-->
+            <script type="text/javascript" charset="utf-8">
+                document.addEventListener("deviceready", onDeviceReady, false);
+                function onInitFs(fs) {
+                    createDir(fs.root, path.split('/')); // fs.root is a DirectoryEntry.
+                }
+            window.requestFileSystem(window.TEMPORARY, 1024*1024, onInitFs, errorHandler);
+            //test
+            //if($('#smallImage2_1').attr('src')){
+            function test() {
+                imagefile = $('#k_2_4').attr('src');
+                uploadPhoto(imagefile, "k2_4");
+                
+                imagefile = $('#k_2_5').attr('src');
+                uploadPhoto(imagefile, "k2_5");
+                
+                imagefile = $('#k_2_6').attr('src');
+                uploadPhoto(imagefile, "k2_6");
+            }
+            
+            function uploadPhoto(imagefile, vImage) {
+                var imagefile = imagefile;
+                
+                function delete_images(){
+                    navigator.camera.cleanup(onSuccess, onFail);
+                    
+                    function onSuccess() {
+                        console.log("Camera cleanup success.");
+                    }
+                    
+                    function onFail(message) {
+                        alert('Failed because: ' + message);
+                    }
+                }
+                //old upload
+                // Verify server has been entered
+                server = document.getElementById('serverUrl').value;
+                if (server) {
+                    
+                    // Specify transfer options
+                    var options = new FileUploadOptions();
+                    options.fileKey="file";
+                    options.fileName=imagefile.substr(imagefile.lastIndexOf('/')+1);
+                    options.mimeType="image/jpeg";
+                    options.chunkedMode = false;
+                    // Transfer picture to server
+                    var ft = new FileTransfer();
+                    ft.upload(imagefile, server, function(r) {
+                              document.getElementById('camera_status').innerHTML = "Upload successful: "+r.bytesSent+" bytes uploaded.";
+                              }, function(error) {
+                              document.getElementById('camera_status').innerHTML = "Upload failed: Code = "+error.code;
+                              }, options);
+                }
+                //old upload end
+                
+                
+            }
+            
+            
+            //test end
+            /**
+             * Take picture with camera
+             */
+            function takePicture() {
+                navigator.camera.getPicture(
+                                            function(uri) {
+                                            var img = document.getElementById('camera_image');
+                                            img.style.visibility = "visible";
+                                            img.style.display = "block";
+                                            img.src = uri;
+                                            document.getElementById('camera_status').innerHTML = "Success";
+                                            },
+                                            function(e) {
+                                            console.log("Error getting picture: " + e);
+                                            document.getElementById('camera_status').innerHTML = "Error getting picture.";
+                                            },
+                                            { quality : 50, destinationType : Camera.DestinationType.FILE_URI });
+                      
+            };
+
+            /**
+             * Upload current picture
+             */
+            function uploadPicture() {
+                
+                // Get URI of picture to upload
+                var img = document.getElementById('camera_image');
+                var imageURI = img.src;
+                if (!imageURI || (img.style.display == "none")) {
+                    document.getElementById('camera_status').innerHTML = "Take picture or select picture from library first.";
+                    return;
+                }
+                
+                // Verify server has been entered
+                server = document.getElementById('serverUrl').value;
+                if (server) {
+                    
+                    // Specify transfer options
+                    var options = new FileUploadOptions();
+                    options.fileKey="file";
+                    options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
+                    options.mimeType="image/jpeg";
+                    options.chunkedMode = false;
+                    
+                    // Transfer picture to server
+                    var ft = new FileTransfer();
+                    ft.upload(imageURI, server, function(r) {
+                              document.getElementById('camera_status').innerHTML = "Upload successful: "+r.bytesSent+" bytes uploaded.";
+                              }, function(error) {
+                              document.getElementById('camera_status').innerHTML = "Upload failed: Code = "+error.code;
+                              }, options);
+                }
+            }
+            
+                </script>
+            
+            </head>
+    <body onload="init();">
+        <h3>PhoneGap Camera Upload Demo</h3>
+        
+        <div>
+            <h3>Server URL for upload.php:</h3>
+            <ul id="filelist"></ul>
+            <input id="serverUrl" type="text" value="http://actualizedev.com/vsag/process/upload.php" />
+        </div>
+        <h3>Test</h3>
+        
+        <div id="appendedLS"></div>
+        <script>
+            for (var i = 0; i < localStorage.length; i++) {
+                var lsKey = localStorage.key(i);
+                var lsValue = localStorage.getItem(localStorage.key(i));
+                if(lsKey.match("2_4|2_5|2_6")){
+                    $("#appendedLS").append("<img width=25 name='" + lsKey + "' src='" + lsValue + "' id='" + lsKey + "' style='display:none;'/>");
+                    //$("#appendedLS").append("<input name='" + lsKey + "' value='" + lsValue + "'/>");
+                }
+            }
+        </script>
+        <div>
+            <input type="button" value="alertthis" onclick="test();"/>
+        </div>
+        <h3>end Test</h3>
+        <br/>
+        
+        <!-- Camera -->
+        <div>
+            <h3>Camera:</h3>
+            <b>Status:</b> <span id="camera_status"></span><br>
+            <b>Image:</b> <img style="width:120px;visibility:hidden;display:none;" id="camera_image" src="" />
+        </div>
+        
+        <!-- Actions -->
+        <div>
+            <input type="button" onclick="takePicture();" value="Take Picture" /><br/>
+            <input type="button" onclick="selectPicture();" value="Select Picture from Library" /><br/>
+            <input type="button" onclick="delete_images();" value="delete pics temp" /><br/>
+            <input type="button" onclick="uploadPicture();" value="Upload Picture" /><br/>
+            <a href="kitchen/kitchen1.html">Kitchen1</a>
+        </div>
+        <br/>
+
+    </body>
+</html>
