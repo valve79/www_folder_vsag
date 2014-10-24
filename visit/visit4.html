@@ -1,0 +1,330 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <script src="../js/jquery-1.8.3.js" type="text/javascript"></script>
+  <title></title>
+<div data-include="kitchen1.html"></div>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<!-- SET: SCRIPTS -->
+<!-- Pre set by XHTML CHOP -->
+
+<script src="../js/css3-mediaqueries.js" type="text/javascript"></script>
+<script src="../js/modernizr.js" type="text/javascript"></script>
+<script type="text/javascript" src="../js/jquery.ddslick.js"> </script>
+<script type="text/javascript" src="../js/jquery.sidr.min.js"> </script>
+
+<!-- SET: FAVICON -->
+<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+<!-- END: FAVICON -->
+
+<!-- SET: STYLESHEET -->
+<link rel="stylesheet" href="../css/jquery.sidr.dark.css">
+<!-- <link rel="stylesheet" type="text/css" href="../css/dd.css" > -->
+<link rel="stylesheet" type="text/css" href="../css/ddSlick.css" >
+<link href="../css/style.css" rel="stylesheet" type="text/css" media="all">
+<link href="../css/responsive.css" rel="stylesheet" type="text/css" media="all">
+<!-- END: STYLESHEET -->
+
+
+
+<!-- Custom Actualize Studio JS Files -->
+
+<script type"text/javascript" src="../js/localStorage.js"></script>
+<script type"text/javascript" src="../cordova.js"></script>
+<script type"text/javascript" src="../cordova_plugins.js"></script>
+<!--<script src="../js/actualizeCamera.js" type="text/javascript"></script>-->
+<!--<script src="../js/actualizeCameraDemoOnly.js" type="text/javascript"></script>-->
+
+<script>
+    $(document).ready(function() {
+                      var client = localStorage.getItem("client");
+                      var email = localStorage.getItem("email");
+                      var phone = localStorage.getItem("number");
+                      var consultant = localStorage.getItem("consultant");
+                      var date = localStorage.getItem("date");
+                      
+                      $('#client').html(client);
+                      $('#email').html(email);
+                      $('#number').html(phone);
+                      $('#consultant').html(consultant);
+                      $('#date').html(date);
+                      
+                      
+                      });
+</script>
+<!-- Header JAVASCRIPT -->
+
+
+<!-- END: SCRIPTS -->
+
+<!--[if lte IE 8]>
+<style type="text/css">
+.form input {behavior:url(PIE.htc); border-radius: 4px; position: relative; box-shadow: 0px 1px 3px 0px rgba(119, 119, 119, 0.75) !important; z-index: 0;}
+.bottom-button a {behavior:url(PIE.htc); border-radius: 4px; position: relative; box-shadow: 0px 1px 3px 0px rgba(119, 119, 119, 0.75) !important;}
+#sidr input {behavior:url(PIE.htc); border-radius: 4px; position: relative; box-shadow: 0px 1px 3px 0px rgba(119, 119, 119, 0.75) !important;}
+.dropdown2 {behavior:url(PIE.htc); position: relative; border-radius: 4px; box-shadow: 0px 1px 3px 0px rgba(119, 119, 119, 0.75) !important;}
+.dropdown2 .ddChild {behavior:url(PIE.htc); border-radius: 4px; box-shadow: 0px 1px 3px 0px rgba(119, 119, 119, 0.75) !important;}
+</style>
+<![endif]-->
+
+</head>
+
+<body>
+<!-- wrapper starts -->
+<div class="wrapper inner"> 
+  
+  <!-- container starts -->
+  <div class="container">
+    <div class="main-container"> 
+      
+      <!-- Header Starts -->
+      <div id="header"> </div>
+      <!-- Header ends --> 
+      
+      <!-- maincontent Starts -->
+      <div class="maincontent">
+        <div class="top-header"> <a href="#" class="menu-btn"></a> 
+          <!-- Sidr Content -->
+          <div id="sidr"> <a href="#" id="logo"><img src="../img/logo.png" width="151" height="197" alt=""></a>
+            <ul class="reportDetails">
+              <li id="client"></li>
+              <li id="email"></li>
+              <li id="number"></li>
+              <li id="consultant"></li>
+              <li id="date"></li>
+              <li><a href="../edit.html">Edit Report Details</a></li>
+            </ul>
+            <input name="" type="button" value="QUICK JUMP" class="button" id="quickJump">
+            <div class="hiddenMenu">
+              <ul style="border-bottom: none;">
+                <li><a href="http://actualizestudio.com/dev/vsag/kitchen/">Kitchen</a></li>
+          <li><a href="http://actualizestudio.com/dev/vsag/visit/">Visit</a></li>
+          <li><a href="http://actualizestudio.com/dev/vsag/service/">Service</a></li>
+          <li><a href="http://actualizestudio.com/dev/vsag/office/">Office</a></li>
+          <li><a href="http://actualizestudio.com/dev/vsag/branding/">Branding</a></li>
+          <li><a href="http://actualizestudio.com/dev/vsag/management/">Management</a></li>
+          <li><a href="http://actualizestudio.com/dev/vsag/hr/">HR</a></li>
+        </ul>
+            </div>
+            <span>
+                <input name="" type="button" value="SAVE" class="saveIt button" id="nextSection">
+            </span>
+            <span>
+                <input name="" type="button" value="CANCEL PROJECT" class="button" id="cancelProject">
+            </span>
+          </div>
+          <a href="#" id="small-logo"><img src="../img/small-logo.png" width="104" height="25" alt=""></a> <span class="clear"></span> </div>
+        <div class="title" id="title1">
+           <h1>VISIT (PAGE 4)</h1>
+        </div>
+        <div class="form">
+            <form id="formID">
+          <ul>
+
+            <li class="odd">
+<h2>Is there music and does it match the concept?</h2>
+<input name="v_82_1" id="v_82_1" tabindex="1" class="stored" type="text" placeholder="Notes..." >
+<div class="bottom">
+<div class="button_header"><span class="button_header_space">Yes/No</span><span>Grade</span></div><div class="ynDropdown" name="v_82_2"></div>
+<div class="ratingDropdown" name="v_82_3"></div>
+<img style="width:38px;height:38px;" id="v_82_4" class="camera" src="../img/camera.png" onclick="capturePhoto82_4();" name="v_82_4"/>
+<img style="width:38px;height:38px;" id="v_82_5" class="camera" src="../img/camera.png" onclick="capturePhoto82_5();" name="v_82_5"/>
+<img style="width:38px;height:38px;" id="v_82_6" class="camera" src="../img/camera.png" onclick="capturePhoto82_6();" name="v_82_6"/>
+<span class="clear"></span>
+</div>
+</li>
+
+<li class="even">
+<h2>Does the atmosphere feel clean (Check your LAMA)</h2>
+<input name="v_83_1" id="v_83_1" tabindex="1" class="stored" type="text" placeholder="Notes..." >
+<div class="bottom">
+<div class="button_header"><span class="button_header_space">Yes/No</span><span>Grade</span></div><div class="ynDropdown" name="v_83_2"></div>
+<div class="ratingDropdown" name="v_83_3"></div>
+<img style="width:38px;height:38px;" id="v_83_4" class="camera" src="../img/camera.png" onclick="capturePhoto83_4();" name="v_83_4"/>
+<img style="width:38px;height:38px;" id="v_83_5" class="camera" src="../img/camera.png" onclick="capturePhoto83_5();" name="v_83_5"/>
+<img style="width:38px;height:38px;" id="v_83_6" class="camera" src="../img/camera.png" onclick="capturePhoto83_6();" name="v_83_6"/>
+<span class="clear"></span>
+</div>
+</li>
+
+<li class="odd">
+<h2>Does the d?cor match the brand and concept?</h2>
+<input name="v_84_1" id="v_84_1" tabindex="1" class="stored" type="text" placeholder="Notes..." >
+<div class="bottom">
+<div class="button_header"><span class="button_header_space">Yes/No</span><span>Grade</span></div><div class="ynDropdown" name="v_84_2"></div>
+<div class="ratingDropdown" name="v_84_3"></div>
+<img style="width:38px;height:38px;" id="v_84_4" class="camera" src="../img/camera.png" onclick="capturePhoto84_4();" name="v_84_4"/>
+<img style="width:38px;height:38px;" id="v_84_5" class="camera" src="../img/camera.png" onclick="capturePhoto84_5();" name="v_84_5"/>
+<img style="width:38px;height:38px;" id="v_84_6" class="camera" src="../img/camera.png" onclick="capturePhoto84_6();" name="v_84_6"/>
+<span class="clear"></span>
+</div>
+</li>
+
+<li class="even">
+<h2>Is the furniture in good condition?</h2>
+<input name="v_85_1" id="v_85_1" tabindex="1" class="stored" type="text" placeholder="Notes..." >
+<div class="bottom">
+<div class="button_header"><span class="button_header_space">Yes/No</span><span>Grade</span></div><div class="ynDropdown" name="v_85_2"></div>
+<div class="ratingDropdown" name="v_85_3"></div>
+<img style="width:38px;height:38px;" id="v_85_4" class="camera" src="../img/camera.png" onclick="capturePhoto85_4();" name="v_85_4"/>
+<img style="width:38px;height:38px;" id="v_85_5" class="camera" src="../img/camera.png" onclick="capturePhoto85_5();" name="v_85_5"/>
+<img style="width:38px;height:38px;" id="v_85_6" class="camera" src="../img/camera.png" onclick="capturePhoto85_6();" name="v_85_6"/>
+<span class="clear"></span>
+</div>
+</li>
+
+<li class="odd">
+<h2>Is the carpet in good condition?</h2>
+<input name="v_86_1" id="v_86_1" tabindex="1" class="stored" type="text" placeholder="Notes..." >
+<div class="bottom">
+<div class="button_header"><span class="button_header_space">Yes/No</span><span>Grade</span></div><div class="ynDropdown" name="v_86_2"></div>
+<div class="ratingDropdown" name="v_86_3"></div>
+<img style="width:38px;height:38px;" id="v_86_4" class="camera" src="../img/camera.png" onclick="capturePhoto86_4();" name="v_86_4"/>
+<img style="width:38px;height:38px;" id="v_86_5" class="camera" src="../img/camera.png" onclick="capturePhoto86_5();" name="v_86_5"/>
+<img style="width:38px;height:38px;" id="v_86_6" class="camera" src="../img/camera.png" onclick="capturePhoto86_6();" name="v_86_6"/>
+<span class="clear"></span>
+</div>
+</li>
+
+<li class="even">
+<h2>Are the walls in good condition?</h2>
+<input name="v_87_1" id="v_87_1" tabindex="1" class="stored" type="text" placeholder="Notes..." >
+<div class="bottom">
+<div class="button_header"><span class="button_header_space">Yes/No</span><span>Grade</span></div><div class="ynDropdown" name="v_87_2"></div>
+<div class="ratingDropdown" name="v_87_3"></div>
+<img style="width:38px;height:38px;" id="v_87_4" class="camera" src="../img/camera.png" onclick="capturePhoto87_4();" name="v_87_4"/>
+<img style="width:38px;height:38px;" id="v_87_5" class="camera" src="../img/camera.png" onclick="capturePhoto87_5();" name="v_87_5"/>
+<img style="width:38px;height:38px;" id="v_87_6" class="camera" src="../img/camera.png" onclick="capturePhoto87_6();" name="v_87_6"/>
+<span class="clear"></span>
+</div>
+</li>
+<h1 class="subtitle">Visit: <span>Tables</span></h1>
+<li class="odd">
+<h2>Are the table tops in good condition?</h2>
+<input name="v_88_1" id="v_88_1" tabindex="1" class="stored" type="text" placeholder="Notes..." >
+<div class="bottom">
+<div class="button_header"><span class="button_header_space">Yes/No</span><span>Grade</span></div><div class="ynDropdown" name="v_88_2"></div>
+<div class="ratingDropdown" name="v_88_3"></div>
+<img style="width:38px;height:38px;" id="v_88_4" class="camera" src="../img/camera.png" onclick="capturePhoto88_4();" name="v_88_4"/>
+<img style="width:38px;height:38px;" id="v_88_5" class="camera" src="../img/camera.png" onclick="capturePhoto88_5();" name="v_88_5"/>
+<img style="width:38px;height:38px;" id="v_88_6" class="camera" src="../img/camera.png" onclick="capturePhoto88_6();" name="v_88_6"/>
+<span class="clear"></span>
+</div>
+</li>
+
+<li class="even">
+<h2>Is there salt & pepper?</h2>
+<input name="v_89_1" id="v_89_1" tabindex="1" class="stored" type="text" placeholder="Notes..." >
+<div class="bottom">
+<div class="button_header"><span class="button_header_space">Yes/No</span><span>Grade</span></div><div class="ynDropdown" name="v_89_2"></div>
+<div class="ratingDropdown" name="v_89_3"></div>
+<img style="width:38px;height:38px;" id="v_89_4" class="camera" src="../img/camera.png" onclick="capturePhoto89_4();" name="v_89_4"/>
+<img style="width:38px;height:38px;" id="v_89_5" class="camera" src="../img/camera.png" onclick="capturePhoto89_5();" name="v_89_5"/>
+<img style="width:38px;height:38px;" id="v_89_6" class="camera" src="../img/camera.png" onclick="capturePhoto89_6();" name="v_89_6"/>
+<span class="clear"></span>
+</div>
+</li>
+
+<li class="odd">
+<h2>Are there sweetners?</h2>
+<input name="v_90_1" id="v_90_1" tabindex="1" class="stored" type="text" placeholder="Notes..." >
+<div class="bottom">
+<div class="button_header"><span class="button_header_space">Yes/No</span><span>Grade</span></div><div class="ynDropdown" name="v_90_2"></div>
+<div class="ratingDropdown" name="v_90_3"></div>
+<img style="width:38px;height:38px;" id="v_90_4" class="camera" src="../img/camera.png" onclick="capturePhoto90_4();" name="v_90_4"/>
+<img style="width:38px;height:38px;" id="v_90_5" class="camera" src="../img/camera.png" onclick="capturePhoto90_5();" name="v_90_5"/>
+<img style="width:38px;height:38px;" id="v_90_6" class="camera" src="../img/camera.png" onclick="capturePhoto90_6();" name="v_90_6"/>
+<span class="clear"></span>
+</div>
+</li>
+
+<li class="even">
+<h2>Are there condiments when appropriate?</h2>
+<input name="v_91_1" id="v_91_1" tabindex="1" class="stored" type="text" placeholder="Notes..." >
+<div class="bottom">
+<div class="button_header"><span class="button_header_space">Yes/No</span><span>Grade</span></div><div class="ynDropdown" name="v_91_2"></div>
+<div class="ratingDropdown" name="v_91_3"></div>
+<img style="width:38px;height:38px;" id="v_91_4" class="camera" src="../img/camera.png" onclick="capturePhoto91_4();" name="v_91_4"/>
+<img style="width:38px;height:38px;" id="v_91_5" class="camera" src="../img/camera.png" onclick="capturePhoto91_5();" name="v_91_5"/>
+<img style="width:38px;height:38px;" id="v_91_6" class="camera" src="../img/camera.png" onclick="capturePhoto91_6();" name="v_91_6"/>
+<span class="clear"></span>
+</div>
+</li>
+          <!-- Place content here -->
+            
+          </ul>
+          </form>
+        </div>
+        <div class="bottom-button">
+          <div class="button-wrapper"><a id="back" class="back" href="visit3.html">BACK</a> <a class="next saveIt" href="visit5.html">NEXT SECTION</a> <span class="clear"></span> </div>
+        </div>
+      </div>
+      
+      <!-- maincontent ends --> 
+      
+      <!-- footer starts -->
+      <div id="footer"> </div>
+      <!-- footer ends --> 
+      
+    </div>
+    <!-- container ends --> 
+    
+  </div>
+  <!-- main-container ends --> 
+  
+</div>
+<!-- wrapper ends --> 
+
+<script type="text/javascript">
+$(function() {
+  $('.menu-btn').sidr();
+ // $(".sl2").testPlug();
+  
+});
+</script>
+<script type="text/javascript">
+    var ynData = [
+                  {
+                  text: "YES",
+                  value: "YES",
+                  selected: false
+                  },
+                  {
+                  text: "NO",
+                  value: "NO",
+                  selected: false
+                  }
+                  ];
+                  
+                  var ratingData = [
+                                    {
+                                    text: "1",
+                                    value: "1",
+                                    selected: false
+                                    },
+                                    {
+                                    text: "2",
+                                    value: "2",
+                                    selected: false
+                                    },
+                                    {
+                                    text: "3",
+                                    value: "3",
+                                    selected: false
+                                    },
+                                    {
+                                    text: "4",
+                                    value: "4",
+                                    selected: false
+                                    },
+                                    {
+                                    text: "5",
+                                    value: "5",
+                                    selected: false
+                                    }
+                                    ];
+    </script>
+</body>
+</html>

@@ -1,0 +1,330 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <script src="../js/jquery-1.8.3.js" type="text/javascript"></script>
+  <title></title>
+<div data-include="kitchen1.html"></div>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<!-- SET: SCRIPTS -->
+<!-- Pre set by XHTML CHOP -->
+
+<script src="../js/css3-mediaqueries.js" type="text/javascript"></script>
+<script src="../js/modernizr.js" type="text/javascript"></script>
+<script type="text/javascript" src="../js/jquery.ddslick.js"> </script>
+<script type="text/javascript" src="../js/jquery.sidr.min.js"> </script>
+
+<!-- SET: FAVICON -->
+<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+<!-- END: FAVICON -->
+
+<!-- SET: STYLESHEET -->
+<link rel="stylesheet" href="../css/jquery.sidr.dark.css">
+<!-- <link rel="stylesheet" type="text/css" href="../css/dd.css" > -->
+<link rel="stylesheet" type="text/css" href="../css/ddSlick.css" >
+<link href="../css/style.css" rel="stylesheet" type="text/css" media="all">
+<link href="../css/responsive.css" rel="stylesheet" type="text/css" media="all">
+<!-- END: STYLESHEET -->
+
+
+
+<!-- Custom Actualize Studio JS Files -->
+
+<script type"text/javascript" src="../js/localStorage.js"></script>
+<script type"text/javascript" src="../cordova.js"></script>
+<script type"text/javascript" src="../cordova_plugins.js"></script>
+<!--<script src="../js/actualizeCamera.js" type="text/javascript"></script>-->
+<!--<script src="../js/actualizeCameraDemoOnly.js" type="text/javascript"></script>-->
+
+<script>
+    $(document).ready(function() {
+                      var client = localStorage.getItem("client");
+                      var email = localStorage.getItem("email");
+                      var phone = localStorage.getItem("number");
+                      var consultant = localStorage.getItem("consultant");
+                      var date = localStorage.getItem("date");
+                      
+                      $('#client').html(client);
+                      $('#email').html(email);
+                      $('#number').html(phone);
+                      $('#consultant').html(consultant);
+                      $('#date').html(date);
+                      
+                      
+                      });
+</script>
+<!-- Header JAVASCRIPT -->
+
+
+<!-- END: SCRIPTS -->
+
+<!--[if lte IE 8]>
+<style type="text/css">
+.form input {behavior:url(PIE.htc); border-radius: 4px; position: relative; box-shadow: 0px 1px 3px 0px rgba(119, 119, 119, 0.75) !important; z-index: 0;}
+.bottom-button a {behavior:url(PIE.htc); border-radius: 4px; position: relative; box-shadow: 0px 1px 3px 0px rgba(119, 119, 119, 0.75) !important;}
+#sidr input {behavior:url(PIE.htc); border-radius: 4px; position: relative; box-shadow: 0px 1px 3px 0px rgba(119, 119, 119, 0.75) !important;}
+.dropdown2 {behavior:url(PIE.htc); position: relative; border-radius: 4px; box-shadow: 0px 1px 3px 0px rgba(119, 119, 119, 0.75) !important;}
+.dropdown2 .ddChild {behavior:url(PIE.htc); border-radius: 4px; box-shadow: 0px 1px 3px 0px rgba(119, 119, 119, 0.75) !important;}
+</style>
+<![endif]-->
+
+</head>
+
+<body>
+<!-- wrapper starts -->
+<div class="wrapper inner"> 
+  
+  <!-- container starts -->
+  <div class="container">
+    <div class="main-container"> 
+      
+      <!-- Header Starts -->
+      <div id="header"> </div>
+      <!-- Header ends --> 
+      
+      <!-- maincontent Starts -->
+      <div class="maincontent">
+        <div class="top-header"> <a href="#" class="menu-btn"></a> 
+          <!-- Sidr Content -->
+          <div id="sidr"> <a href="#" id="logo"><img src="../img/logo.png" width="151" height="197" alt=""></a>
+            <ul class="reportDetails">
+              <li id="client"></li>
+              <li id="email"></li>
+              <li id="number"></li>
+              <li id="consultant"></li>
+              <li id="date"></li>
+              <li><a href="../edit.html">Edit Report Details</a></li>
+            </ul>
+            <input name="" type="button" value="QUICK JUMP" class="button" id="quickJump">
+            <div class="hiddenMenu">
+              <ul style="border-bottom: none;">
+                <li><a href="http://actualizestudio.com/dev/vsag/kitchen/">Kitchen</a></li>
+          <li><a href="http://actualizestudio.com/dev/vsag/visit/">Visit</a></li>
+          <li><a href="http://actualizestudio.com/dev/vsag/service/">Service</a></li>
+          <li><a href="http://actualizestudio.com/dev/vsag/office/">Office</a></li>
+          <li><a href="http://actualizestudio.com/dev/vsag/branding/">Branding</a></li>
+          <li><a href="http://actualizestudio.com/dev/vsag/management/">Management</a></li>
+          <li><a href="http://actualizestudio.com/dev/vsag/hr/">HR</a></li>
+        </ul>
+            </div>
+            <span>
+                <input name="" type="button" value="SAVE" class="saveIt button" id="nextSection">
+            </span>
+            <span>
+                <input name="" type="button" value="CANCEL PROJECT" class="button" id="cancelProject">
+            </span>
+          </div>
+          <a href="#" id="small-logo"><img src="../img/small-logo.png" width="104" height="25" alt=""></a> <span class="clear"></span> </div>
+        <div class="title" id="title1">
+        <h1>HR</h1>
+        </div>
+        <div class="form">
+            <form id="formID">
+          <ul>
+            <li class="odd">
+            <h2>Is turnover properly tracked?</h2>
+<input name="h_231_1" id="h_231_1" tabindex="1" class="stored" type="text" placeholder="Notes..." >
+<div class="bottom">
+<div class="button_header"><span class="button_header_space">Yes/No</span><span>Grade</span></div><div class="ynDropdown" name="h_231_2"></div>
+<div class="ratingDropdown" name="h_231_3"></div>
+<img style="width:38px;height:38px;" id="h_231_4" class="camera" src="../img/camera.png" onclick="capturePhoto231_4();" name="h_231_4"/>
+<img style="width:38px;height:38px;" id="h_231_5" class="camera" src="../img/camera.png" onclick="capturePhoto231_5();" name="h_231_5"/>
+<img style="width:38px;height:38px;" id="h_231_6" class="camera" src="../img/camera.png" onclick="capturePhoto231_6();" name="h_231_6"/>
+<span class="clear"></span>
+</div>
+</li>
+
+<li class="even">
+<h2>Is there high kitchen staff turnover?</h2>
+<input name="h_232_1" id="h_232_1" tabindex="1" class="stored" type="text" placeholder="Notes..." >
+<div class="bottom">
+<div class="button_header"><span class="button_header_space">Yes/No</span><span>Grade</span></div><div class="ynDropdown" name="h_232_2"></div>
+<div class="ratingDropdown" name="h_232_3"></div>
+<img style="width:38px;height:38px;" id="h_232_4" class="camera" src="../img/camera.png" onclick="capturePhoto232_4();" name="h_232_4"/>
+<img style="width:38px;height:38px;" id="h_232_5" class="camera" src="../img/camera.png" onclick="capturePhoto232_5();" name="h_232_5"/>
+<img style="width:38px;height:38px;" id="h_232_6" class="camera" src="../img/camera.png" onclick="capturePhoto232_6();" name="h_232_6"/>
+<span class="clear"></span>
+</div>
+</li>
+
+<li class="odd">
+<h2>Is there high service staff turnover?</h2>
+<input name="h_233_1" id="h_233_1" tabindex="1" class="stored" type="text" placeholder="Notes..." >
+<div class="bottom">
+<div class="button_header"><span class="button_header_space">Yes/No</span><span>Grade</span></div><div class="ynDropdown" name="h_233_2"></div>
+<div class="ratingDropdown" name="h_233_3"></div>
+<img style="width:38px;height:38px;" id="h_233_4" class="camera" src="../img/camera.png" onclick="capturePhoto233_4();" name="h_233_4"/>
+<img style="width:38px;height:38px;" id="h_233_5" class="camera" src="../img/camera.png" onclick="capturePhoto233_5();" name="h_233_5"/>
+<img style="width:38px;height:38px;" id="h_233_6" class="camera" src="../img/camera.png" onclick="capturePhoto233_6();" name="h_233_6"/>
+<span class="clear"></span>
+</div>
+</li>
+
+<li class="even">
+<h2>Is there a formal review process in place?</h2>
+<input name="h_234_1" id="h_234_1" tabindex="1" class="stored" type="text" placeholder="Notes..." >
+<div class="bottom">
+<div class="button_header"><span class="button_header_space">Yes/No</span><span>Grade</span></div><div class="ynDropdown" name="h_234_2"></div>
+<div class="ratingDropdown" name="h_234_3"></div>
+<img style="width:38px;height:38px;" id="h_234_4" class="camera" src="../img/camera.png" onclick="capturePhoto234_4();" name="h_234_4"/>
+<img style="width:38px;height:38px;" id="h_234_5" class="camera" src="../img/camera.png" onclick="capturePhoto234_5();" name="h_234_5"/>
+<img style="width:38px;height:38px;" id="h_234_6" class="camera" src="../img/camera.png" onclick="capturePhoto234_6();" name="h_234_6"/>
+<span class="clear"></span>
+</div>
+</li>
+
+<li class="odd">
+<h2>Is there an Open Door policy in place?</h2>
+<input name="h_235_1" id="h_235_1" tabindex="1" class="stored" type="text" placeholder="Notes..." >
+<div class="bottom">
+<div class="button_header"><span class="button_header_space">Yes/No</span><span>Grade</span></div><div class="ynDropdown" name="h_235_2"></div>
+<div class="ratingDropdown" name="h_235_3"></div>
+<img style="width:38px;height:38px;" id="h_235_4" class="camera" src="../img/camera.png" onclick="capturePhoto235_4();" name="h_235_4"/>
+<img style="width:38px;height:38px;" id="h_235_5" class="camera" src="../img/camera.png" onclick="capturePhoto235_5();" name="h_235_5"/>
+<img style="width:38px;height:38px;" id="h_235_6" class="camera" src="../img/camera.png" onclick="capturePhoto235_6();" name="h_235_6"/>
+<span class="clear"></span>
+</div>
+</li>
+
+<h1 class="subtitle">HR: <span>The Chef or KM</span></h1>
+<li class="even">
+<h2>Does the Chef/KM have a good attitude and are they flexible?</h2>
+<input name="h_236_1" id="h_236_1" tabindex="1" class="stored" type="text" placeholder="Notes..." >
+<div class="bottom">
+<div class="button_header"><span class="button_header_space">Yes/No</span><span>Grade</span></div><div class="ynDropdown" name="h_236_2"></div>
+<div class="ratingDropdown" name="h_236_3"></div>
+<img style="width:38px;height:38px;" id="h_236_4" class="camera" src="../img/camera.png" onclick="capturePhoto236_4();" name="h_236_4"/>
+<img style="width:38px;height:38px;" id="h_236_5" class="camera" src="../img/camera.png" onclick="capturePhoto236_5();" name="h_236_5"/>
+<img style="width:38px;height:38px;" id="h_236_6" class="camera" src="../img/camera.png" onclick="capturePhoto236_6();" name="h_236_6"/>
+<span class="clear"></span>
+</div>
+</li>
+
+<li class="odd">
+<h2>Is the Chef/KM organized?</h2>
+<input name="h_237_1" id="h_237_1" tabindex="1" class="stored" type="text" placeholder="Notes..." >
+<div class="bottom">
+<div class="button_header"><span class="button_header_space">Yes/No</span><span>Grade</span></div><div class="ynDropdown" name="h_237_2"></div>
+<div class="ratingDropdown" name="h_237_3"></div>
+<img style="width:38px;height:38px;" id="h_237_4" class="camera" src="../img/camera.png" onclick="capturePhoto237_4();" name="h_237_4"/>
+<img style="width:38px;height:38px;" id="h_237_5" class="camera" src="../img/camera.png" onclick="capturePhoto237_5();" name="h_237_5"/>
+<img style="width:38px;height:38px;" id="h_237_6" class="camera" src="../img/camera.png" onclick="capturePhoto237_6();" name="h_237_6"/>
+<span class="clear"></span>
+</div>
+</li>
+
+<li class="even">
+<h2>Is the Chef a working Chef or PC Chef?</h2>
+<input name="h_238_1" id="h_238_1" tabindex="1" class="stored" type="text" placeholder="Notes..." >
+<div class="bottom">
+<div class="button_header"><span class="button_header_space">Yes/No</span><span>Grade</span></div><div class="ynDropdown" name="h_238_2"></div>
+<div class="ratingDropdown" name="h_238_3"></div>
+<img style="width:38px;height:38px;" id="h_238_4" class="camera" src="../img/camera.png" onclick="capturePhoto238_4();" name="h_238_4"/>
+<img style="width:38px;height:38px;" id="h_238_5" class="camera" src="../img/camera.png" onclick="capturePhoto238_5();" name="h_238_5"/>
+<img style="width:38px;height:38px;" id="h_238_6" class="camera" src="../img/camera.png" onclick="capturePhoto238_6();" name="h_238_6"/>
+<span class="clear"></span>
+</div>
+</li>
+
+<li class="odd">
+<h2>Does the Chef/KM have pride in what they do?</h2>
+<input name="h_239_1" id="h_239_1" tabindex="1" class="stored" type="text" placeholder="Notes..." >
+<div class="bottom">
+<div class="button_header"><span class="button_header_space">Yes/No</span><span>Grade</span></div><div class="ynDropdown" name="h_239_2"></div>
+<div class="ratingDropdown" name="h_239_3"></div>
+<img style="width:38px;height:38px;" id="h_239_4" class="camera" src="../img/camera.png" onclick="capturePhoto239_4();" name="h_239_4"/>
+<img style="width:38px;height:38px;" id="h_239_5" class="camera" src="../img/camera.png" onclick="capturePhoto239_5();" name="h_239_5"/>
+<img style="width:38px;height:38px;" id="h_239_6" class="camera" src="../img/camera.png" onclick="capturePhoto239_6();" name="h_239_6"/>
+<span class="clear"></span>
+</div>
+</li>
+
+<li class="even">
+<h2>Does the Chef/KM take creative initiative? (Are they a risk taker?)</h2>
+<input name="h_240_1" id="h_240_1" tabindex="1" class="stored" type="text" placeholder="Notes..." >
+<div class="bottom">
+<div class="button_header"><span class="button_header_space">Yes/No</span><span>Grade</span></div><div class="ynDropdown" name="h_240_2"></div>
+<div class="ratingDropdown" name="h_240_3"></div>
+<img style="width:38px;height:38px;" id="h_240_4" class="camera" src="../img/camera.png" onclick="capturePhoto240_4();" name="h_240_4"/>
+<img style="width:38px;height:38px;" id="h_240_5" class="camera" src="../img/camera.png" onclick="capturePhoto240_5();" name="h_240_5"/>
+<img style="width:38px;height:38px;" id="h_240_6" class="camera" src="../img/camera.png" onclick="capturePhoto240_6();" name="h_240_6"/>
+<span class="clear"></span>
+</div>
+</li>
+          <!-- Place content here -->
+            
+          </ul>
+          </form>
+        </div>
+        <div class="bottom-button">
+          <div class="button-wrapper"><a id="back" class="back" href="../index.html">BACK</a> <a class="next saveIt" href="kitchen2.html">NEXT SECTION</a> <span class="clear"></span> </div>
+        </div>
+      </div>
+      
+      <!-- maincontent ends --> 
+      
+      <!-- footer starts -->
+      <div id="footer"> </div>
+      <!-- footer ends --> 
+      
+    </div>
+    <!-- container ends --> 
+    
+  </div>
+  <!-- main-container ends --> 
+  
+</div>
+<!-- wrapper ends --> 
+
+<script type="text/javascript">
+$(function() {
+  $('.menu-btn').sidr();
+ // $(".sl2").testPlug();
+  
+});
+</script>
+<script type="text/javascript">
+    var ynData = [
+                  {
+                  text: "YES",
+                  value: "YES",
+                  selected: false
+                  },
+                  {
+                  text: "NO",
+                  value: "NO",
+                  selected: false
+                  }
+                  ];
+                  
+                  var ratingData = [
+                                    {
+                                    text: "1",
+                                    value: "1",
+                                    selected: false
+                                    },
+                                    {
+                                    text: "2",
+                                    value: "2",
+                                    selected: false
+                                    },
+                                    {
+                                    text: "3",
+                                    value: "3",
+                                    selected: false
+                                    },
+                                    {
+                                    text: "4",
+                                    value: "4",
+                                    selected: false
+                                    },
+                                    {
+                                    text: "5",
+                                    value: "5",
+                                    selected: false
+                                    }
+                                    ];
+    </script>
+</body>
+</html>

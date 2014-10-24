@@ -1,0 +1,328 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <script src="../js/jquery-1.8.3.js" type="text/javascript"></script>
+  <title></title>
+<div data-include="kitchen1.html"></div>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<!-- SET: SCRIPTS -->
+<!-- Pre set by XHTML CHOP -->
+
+<script src="../js/css3-mediaqueries.js" type="text/javascript"></script>
+<script src="../js/modernizr.js" type="text/javascript"></script>
+<script type="text/javascript" src="../js/jquery.ddslick.js"> </script>
+<script type="text/javascript" src="../js/jquery.sidr.min.js"> </script>
+
+<!-- SET: FAVICON -->
+<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+<!-- END: FAVICON -->
+
+<!-- SET: STYLESHEET -->
+<link rel="stylesheet" href="../css/jquery.sidr.dark.css">
+<!-- <link rel="stylesheet" type="text/css" href="../css/dd.css" > -->
+<link rel="stylesheet" type="text/css" href="../css/ddSlick.css" >
+<link href="../css/style.css" rel="stylesheet" type="text/css" media="all">
+<link href="../css/responsive.css" rel="stylesheet" type="text/css" media="all">
+<!-- END: STYLESHEET -->
+
+
+
+<!-- Custom Actualize Studio JS Files -->
+
+<script type"text/javascript" src="../js/localStorage.js"></script>
+<script type"text/javascript" src="../cordova.js"></script>
+<script type"text/javascript" src="../cordova_plugins.js"></script>
+<!--<script src="../js/actualizeCamera.js" type="text/javascript"></script>-->
+<!--<script src="../js/actualizeCameraDemoOnly.js" type="text/javascript"></script>-->
+
+<script>
+    $(document).ready(function() {
+                      var client = localStorage.getItem("client");
+                      var email = localStorage.getItem("email");
+                      var phone = localStorage.getItem("number");
+                      var consultant = localStorage.getItem("consultant");
+                      var date = localStorage.getItem("date");
+                      
+                      $('#client').html(client);
+                      $('#email').html(email);
+                      $('#number').html(phone);
+                      $('#consultant').html(consultant);
+                      $('#date').html(date);
+                      
+                      
+                      });
+</script>
+<!-- Header JAVASCRIPT -->
+
+
+<!-- END: SCRIPTS -->
+
+<!--[if lte IE 8]>
+<style type="text/css">
+.form input {behavior:url(PIE.htc); border-radius: 4px; position: relative; box-shadow: 0px 1px 3px 0px rgba(119, 119, 119, 0.75) !important; z-index: 0;}
+.bottom-button a {behavior:url(PIE.htc); border-radius: 4px; position: relative; box-shadow: 0px 1px 3px 0px rgba(119, 119, 119, 0.75) !important;}
+#sidr input {behavior:url(PIE.htc); border-radius: 4px; position: relative; box-shadow: 0px 1px 3px 0px rgba(119, 119, 119, 0.75) !important;}
+.dropdown2 {behavior:url(PIE.htc); position: relative; border-radius: 4px; box-shadow: 0px 1px 3px 0px rgba(119, 119, 119, 0.75) !important;}
+.dropdown2 .ddChild {behavior:url(PIE.htc); border-radius: 4px; box-shadow: 0px 1px 3px 0px rgba(119, 119, 119, 0.75) !important;}
+</style>
+<![endif]-->
+
+</head>
+
+<body>
+<!-- wrapper starts -->
+<div class="wrapper inner"> 
+  
+  <!-- container starts -->
+  <div class="container">
+    <div class="main-container"> 
+      
+      <!-- Header Starts -->
+      <div id="header"> </div>
+      <!-- Header ends --> 
+      
+      <!-- maincontent Starts -->
+      <div class="maincontent">
+        <div class="top-header"> <a href="#" class="menu-btn"></a> 
+          <!-- Sidr Content -->
+          <div id="sidr"> <a href="#" id="logo"><img src="../img/logo.png" width="151" height="197" alt=""></a>
+            <ul class="reportDetails">
+              <li id="client"></li>
+              <li id="email"></li>
+              <li id="number"></li>
+              <li id="consultant"></li>
+              <li id="date"></li>
+              <li><a href="../edit.html">Edit Report Details</a></li>
+            </ul>
+            <input name="" type="button" value="QUICK JUMP" class="button" id="quickJump">
+            <div class="hiddenMenu">
+              <ul style="border-bottom: none;">
+                <li><a href="http://actualizestudio.com/dev/vsag/kitchen/">Kitchen</a></li>
+          <li><a href="http://actualizestudio.com/dev/vsag/visit/">Visit</a></li>
+          <li><a href="http://actualizestudio.com/dev/vsag/service/">Service</a></li>
+          <li><a href="http://actualizestudio.com/dev/vsag/office/">Office</a></li>
+          <li><a href="http://actualizestudio.com/dev/vsag/branding/">Branding</a></li>
+          <li><a href="http://actualizestudio.com/dev/vsag/management/">Management</a></li>
+          <li><a href="http://actualizestudio.com/dev/vsag/hr/">HR</a></li>
+        </ul>
+            </div>
+            <span>
+                <input name="" type="button" value="SAVE" class="saveIt button" id="nextSection">
+            </span>
+            <span>
+                <input name="" type="button" value="CANCEL PROJECT" class="button" id="cancelProject">
+            </span>
+          </div>
+          <a href="#" id="small-logo"><img src="../img/small-logo.png" width="104" height="25" alt=""></a> <span class="clear"></span> </div>
+        <div class="title" id="title1">
+          <h1>VISIT (PAGE 3)</h1>
+        </div>
+        <div class="form">
+            <form id="formID">
+          <ul>
+          <!-- Place content here -->
+<li class="odd">
+<h2>Is the pedestrian ingess / egress well kept and clean?</h2>
+<input name="v_72_1" id="v_72_1" tabindex="1" class="stored" type="text" placeholder="Notes..." >
+<div class="bottom">
+<div class="button_header"><span class="button_header_space">Yes/No</span><span>Grade</span></div><div class="ynDropdown" name="v_72_2"></div>
+<div class="ratingDropdown" name="v_72_3"></div>
+<img style="width:38px;height:38px;" id="v_72_4" class="camera" src="../img/camera.png" onclick="capturePhoto72_4();" name="v_72_4"/>
+<img style="width:38px;height:38px;" id="v_72_5" class="camera" src="../img/camera.png" onclick="capturePhoto72_5();" name="v_72_5"/>
+<img style="width:38px;height:38px;" id="v_72_6" class="camera" src="../img/camera.png" onclick="capturePhoto72_6();" name="v_72_6"/>
+<span class="clear"></span>
+</div>
+</li>
+
+<li class="even">
+<h2>Is there appropriate lighting?</h2>
+<input name="v_73_1" id="v_73_1" tabindex="1" class="stored" type="text" placeholder="Notes..." >
+<div class="bottom">
+<div class="button_header"><span class="button_header_space">Yes/No</span><span>Grade</span></div><div class="ynDropdown" name="v_73_2"></div>
+<div class="ratingDropdown" name="v_73_3"></div>
+<img style="width:38px;height:38px;" id="v_73_4" class="camera" src="../img/camera.png" onclick="capturePhoto73_4();" name="v_73_4"/>
+<img style="width:38px;height:38px;" id="v_73_5" class="camera" src="../img/camera.png" onclick="capturePhoto73_5();" name="v_73_5"/>
+<img style="width:38px;height:38px;" id="v_73_6" class="camera" src="../img/camera.png" onclick="capturePhoto73_6();" name="v_73_6"/>
+<span class="clear"></span>
+</div>
+</li>
+
+<li class="odd">
+<h2>Is there a visual appeal to the entrance and front desk?</h2>
+<input name="v_74_1" id="v_74_1" tabindex="1" class="stored" type="text" placeholder="Notes..." >
+<div class="bottom">
+<div class="button_header"><span class="button_header_space">Yes/No</span><span>Grade</span></div><div class="ynDropdown" name="v_74_2"></div>
+<div class="ratingDropdown" name="v_74_3"></div>
+<img style="width:38px;height:38px;" id="v_74_4" class="camera" src="../img/camera.png" onclick="capturePhoto74_4();" name="v_74_4"/>
+<img style="width:38px;height:38px;" id="v_74_5" class="camera" src="../img/camera.png" onclick="capturePhoto74_5();" name="v_74_5"/>
+<img style="width:38px;height:38px;" id="v_74_6" class="camera" src="../img/camera.png" onclick="capturePhoto74_6();" name="v_74_6"/>
+<span class="clear"></span>
+</div>
+</li>
+
+<li class="even">
+<h2>Are the menus clean and organized?</h2>
+<input name="v_75_1" id="v_75_1" tabindex="1" class="stored" type="text" placeholder="Notes..." >
+<div class="bottom">
+<div class="button_header"><span class="button_header_space">Yes/No</span><span>Grade</span></div><div class="ynDropdown" name="v_75_2"></div>
+<div class="ratingDropdown" name="v_75_3"></div>
+<img style="width:38px;height:38px;" id="v_75_4" class="camera" src="../img/camera.png" onclick="capturePhoto75_4();" name="v_75_4"/>
+<img style="width:38px;height:38px;" id="v_75_5" class="camera" src="../img/camera.png" onclick="capturePhoto75_5();" name="v_75_5"/>
+<img style="width:38px;height:38px;" id="v_75_6" class="camera" src="../img/camera.png" onclick="capturePhoto75_6();" name="v_75_6"/>
+<span class="clear"></span>
+</div>
+</li>
+
+<li class="odd">
+<h2>Does the front desk have a good appearance?</h2>
+<input name="v_76_1" id="v_76_1" tabindex="1" class="stored" type="text" placeholder="Notes..." >
+<div class="bottom">
+<div class="button_header"><span class="button_header_space">Yes/No</span><span>Grade</span></div><div class="ynDropdown" name="v_76_2"></div>
+<div class="ratingDropdown" name="v_76_3"></div>
+<img style="width:38px;height:38px;" id="v_76_4" class="camera" src="../img/camera.png" onclick="capturePhoto76_4();" name="v_76_4"/>
+<img style="width:38px;height:38px;" id="v_76_5" class="camera" src="../img/camera.png" onclick="capturePhoto76_5();" name="v_76_5"/>
+<img style="width:38px;height:38px;" id="v_76_6" class="camera" src="../img/camera.png" onclick="capturePhoto76_6();" name="v_76_6"/>
+<span class="clear"></span>
+</div>
+</li>
+<h1 class="subtitle">Visit: <span>Employees</span></h1>
+<li class="even">
+<h2>Do the employees offer a warm and friendly greeting?</h2>
+<input name="v_77_1" id="v_77_1" tabindex="1" class="stored" type="text" placeholder="Notes..." >
+<div class="bottom">
+<div class="button_header"><span class="button_header_space">Yes/No</span><span>Grade</span></div><div class="ynDropdown" name="v_77_2"></div>
+<div class="ratingDropdown" name="v_77_3"></div>
+<img style="width:38px;height:38px;" id="v_77_4" class="camera" src="../img/camera.png" onclick="capturePhoto77_4();" name="v_77_4"/>
+<img style="width:38px;height:38px;" id="v_77_5" class="camera" src="../img/camera.png" onclick="capturePhoto77_5();" name="v_77_5"/>
+<img style="width:38px;height:38px;" id="v_77_6" class="camera" src="../img/camera.png" onclick="capturePhoto77_6();" name="v_77_6"/>
+<span class="clear"></span>
+</div>
+</li>
+
+<li class="odd">
+<h2>Are the employees well kept and do they represent a good image of the brand?</h2>
+<input name="v_78_1" id="v_78_1" tabindex="1" class="stored" type="text" placeholder="Notes..." >
+<div class="bottom">
+<div class="button_header"><span class="button_header_space">Yes/No</span><span>Grade</span></div><div class="ynDropdown" name="v_78_2"></div>
+<div class="ratingDropdown" name="v_78_3"></div>
+<img style="width:38px;height:38px;" id="v_78_4" class="camera" src="../img/camera.png" onclick="capturePhoto78_4();" name="v_78_4"/>
+<img style="width:38px;height:38px;" id="v_78_5" class="camera" src="../img/camera.png" onclick="capturePhoto78_5();" name="v_78_5"/>
+<img style="width:38px;height:38px;" id="v_78_6" class="camera" src="../img/camera.png" onclick="capturePhoto78_6();" name="v_78_6"/>
+<span class="clear"></span>
+</div>
+</li>
+
+<li class="even">
+<h2>Do the employess act with professionalism?</h2>
+<input name="v_79_1" id="v_79_1" tabindex="1" class="stored" type="text" placeholder="Notes..." >
+<div class="bottom">
+<div class="button_header"><span class="button_header_space">Yes/No</span><span>Grade</span></div><div class="ynDropdown" name="v_79_2"></div>
+<div class="ratingDropdown" name="v_79_3"></div>
+<img style="width:38px;height:38px;" id="v_79_4" class="camera" src="../img/camera.png" onclick="capturePhoto79_4();" name="v_79_4"/>
+<img style="width:38px;height:38px;" id="v_79_5" class="camera" src="../img/camera.png" onclick="capturePhoto79_5();" name="v_79_5"/>
+<img style="width:38px;height:38px;" id="v_79_6" class="camera" src="../img/camera.png" onclick="capturePhoto79_6();" name="v_79_6"/>
+<span class="clear"></span>
+</div>
+</li>
+<h1 class="subtitle">Visit: <span>Dining Room</span></h1>
+<li class="odd">
+<h2>Is the lighting appropriate and matching the concept?</h2>
+<input name="v_80_1" id="v_80_1" tabindex="1" class="stored" type="text" placeholder="Notes..." >
+<div class="bottom">
+<div class="button_header"><span class="button_header_space">Yes/No</span><span>Grade</span></div><div class="ynDropdown" name="v_80_2"></div>
+<div class="ratingDropdown" name="v_80_3"></div>
+<img style="width:38px;height:38px;" id="v_80_4" class="camera" src="../img/camera.png" onclick="capturePhoto80_4();" name="v_80_4"/>
+<img style="width:38px;height:38px;" id="v_80_5" class="camera" src="../img/camera.png" onclick="capturePhoto80_5();" name="v_80_5"/>
+<img style="width:38px;height:38px;" id="v_80_6" class="camera" src="../img/camera.png" onclick="capturePhoto80_6();" name="v_80_6"/>
+<span class="clear"></span>
+</div>
+</li>
+
+<li class="even">
+<h2>Is the ambience appropriate and matching the concept?</h2>
+<input name="v_81_1" id="v_81_1" tabindex="1" class="stored" type="text" placeholder="Notes..." >
+<div class="bottom">
+<div class="button_header"><span class="button_header_space">Yes/No</span><span>Grade</span></div><div class="ynDropdown" name="v_81_2"></div>
+<div class="ratingDropdown" name="v_81_3"></div>
+<img style="width:38px;height:38px;" id="v_81_4" class="camera" src="../img/camera.png" onclick="capturePhoto81_4();" name="v_81_4"/>
+<img style="width:38px;height:38px;" id="v_81_5" class="camera" src="../img/camera.png" onclick="capturePhoto81_5();" name="v_81_5"/>
+<img style="width:38px;height:38px;" id="v_81_6" class="camera" src="../img/camera.png" onclick="capturePhoto81_6();" name="v_81_6"/>
+<span class="clear"></span>
+</div>
+</li>
+          </ul>
+          </form>
+        </div>
+        <div class="bottom-button">
+          <div class="button-wrapper"><a id="back" class="back" href="visit2.html">BACK</a> <a class="next saveIt" href="visit4.html">NEXT SECTION</a> <span class="clear"></span> </div>
+        </div>
+      </div>
+      
+      <!-- maincontent ends --> 
+      
+      <!-- footer starts -->
+      <div id="footer"> </div>
+      <!-- footer ends --> 
+      
+    </div>
+    <!-- container ends --> 
+    
+  </div>
+  <!-- main-container ends --> 
+  
+</div>
+<!-- wrapper ends --> 
+
+<script type="text/javascript">
+$(function() {
+  $('.menu-btn').sidr();
+ // $(".sl2").testPlug();
+  
+});
+</script>
+<script type="text/javascript">
+    var ynData = [
+                  {
+                  text: "YES",
+                  value: "YES",
+                  selected: false
+                  },
+                  {
+                  text: "NO",
+                  value: "NO",
+                  selected: false
+                  }
+                  ];
+                  
+                  var ratingData = [
+                                    {
+                                    text: "1",
+                                    value: "1",
+                                    selected: false
+                                    },
+                                    {
+                                    text: "2",
+                                    value: "2",
+                                    selected: false
+                                    },
+                                    {
+                                    text: "3",
+                                    value: "3",
+                                    selected: false
+                                    },
+                                    {
+                                    text: "4",
+                                    value: "4",
+                                    selected: false
+                                    },
+                                    {
+                                    text: "5",
+                                    value: "5",
+                                    selected: false
+                                    }
+                                    ];
+    </script>
+</body>
+</html>
