@@ -66,6 +66,15 @@
                 });
                 
                 $(window)
+for (var i = 2; i <= 741; i++) {
+    
+    var thisName = "p_" + (Math.floor(i/3)+1) + "_" + (i+1);
+    
+    var thisValue = "";
+    localStorage.setItem(thisName, thisValue);
+}
+
+
                 </script>
                 <!-- Header JAVASCRIPT -->
                                     
@@ -96,7 +105,7 @@
                             <form id="basicInfo" action="kitchen/kitchen1.html" method="post">
                                 <input name="client" type="text" placeholder="CLIENT" id="client">
                                 <input name="email" type="email" placeholder="CLIENT EMAIL" id="email">
-                                <input name="number" type="text" placeholder="CLIENT PHONE NUMBER" id="number">
+                                <input name="number" type="number" placeholder="CLIENT PHONE NUMBER" id="number">
                                 <input name="consultant" type="text" placeholder="CONSULTANT" id="consultant">
                                 <input name="date" id="date">
                                 <script type="text/javascript">
