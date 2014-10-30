@@ -29,21 +29,21 @@
                                     <script type"text/javascript" src="cordova_plugins.js"></script>
                                     <script src="js/actualizeCamera.js" type="text/javascript"></script>
                                     <!--<script type="text/javascript">
-                                        $(document).ready(function() {
-                                                          $('#storeData').on('click', function() {
-                                                                             if (localStorage) {
-                                                                             localStorage.setItem("flag", "set");
-                                                                             var data = $('#basicInfo').serializeArray();
-                                                                             $.each(data, function (i, obj) {
-                                                                                    // HTML5 magic
-                                                                                    localStorage.setItem(obj.name, obj.value);
-                                                                                    });
-                                                                             }
-                                                                             alert("Data Saved");
-                                                                             
-                                                                             });
-                                                          });
-                                        </script>-->
+                                     $(document).ready(function() {
+                                     $('#storeData').on('click', function() {
+                                     if (localStorage) {
+                                     localStorage.setItem("flag", "set");
+                                     var data = $('#basicInfo').serializeArray();
+                                     $.each(data, function (i, obj) {
+                                     // HTML5 magic
+                                     localStorage.setItem(obj.name, obj.value);
+                                     });
+                                     }
+                                     alert("Data Saved");
+                                     
+                                     });
+                                     });
+                                     </script>-->
                                     <script type="text/javascript" src="js/submitData.js"></script>
                                     <!-- Header JAVASCRIPT -->
                                     
@@ -60,7 +60,6 @@
                                      <![endif]-->
                                     <script type="text/JAVASCRIPT">
                                         function submittest(){
-                                            localStorage.clear();
                                             window.location = "create.html";
                                         }
                                     </script>
@@ -76,95 +75,108 @@
                     <!-- Header Starts -->
                     <div id="header"> <a href="#" id="logo"><img src="img/logo.png" width="151" height="197" alt=""></a>
                         <div id="main-form">
-                        <div class="connection"></div>
-                        <form action="http://actualizedev.com/vsag/process/index.php" method="post">
-                        <input type="button" class="button" id="example" onclick="test();" value="Upload Images">
-                            <input type="submit" class="button" id="submit" value="Submit your Project">
-                        <!--<input type="button" class="button" value="Submit your Project" onclick="submittest();">-->
-                            <div style="text-align:center;display:none;" id="example2"></br><img src="img/712.png" width="50" id="example3"></br></br>
-                                <b style="color:white;">Status:</b> <span id="camera_status">Uploading...</span>
-                            </div>
-                        <div class="trouble" style="display: none;">
-                            <input style="background: #666; color: #333" type="button" class="button" id="cantSubmit" value="Submit your Project">
-                            <p class="connectivityWarning">You currently do not have an internet connection. Please connect to the internet and then submit your report.</p>
-                        </div>
-                        <!--<input type="button" class="button" value="Create a new Project">-->
-                        <div id="appendedLS"></div>
-                        </form>
-                        <script src="js/image_upload.js" type="text/javascript"></script>
-                        <script type="text/javascript" charset="utf-8">
-
-                        
-                        function uploadPhoto(imagefile, vImage) {
-                            var imagefile = imagefile;
-                            
-                            function delete_images(){
-                                navigator.camera.cleanup(onSuccess, onFail);
+                            <div class="connection"></div>
+                            <form action="http://actualizedev.com/vsag/process/index.php" method="post" id="idForm">
+                                <input type="button" class="button" id="example" onclick="test();" value="Complete and Upload">
+                                    <!--<input type="submit" class="button" id="submit" value="Submit your Project">-->
+                                    <input type="button" class="button" id="done" onclick="submittest()" value="Im Done" style="display:none;">
+                                        <!--<input type="button" class="button" value="Submit your Project" onclick="submittest();">-->
+                                        <div style="text-align:center;display:none;" id="example2"></br><img src="img/712.png" width="50" id="example3"></br></br>
+                                            <b style="color:white;">Status:</b> <span id="camera_status">Uploading...</span>
+                                            </div>
+                                        <div class="trouble" style="display: none;">
+                                            <input style="background: #666; color: #333" type="button" class="button" id="cantSubmit" value="Submit your Project">
+                                                <p class="connectivityWarning">You currently do not have an internet connection. Please connect to the internet and then submit your report.</p>
+                                                </div>
+                                        <!--<input type="button" class="button" value="Create a new Project">-->
+                                        <div id="appendedLS"></div>
+                                        </form>
+                            <script src="js/image_upload.js" type="text/javascript"></script>
+                            <script type="text/javascript" charset="utf-8">
                                 
-                                function onSuccess() {
-                                    console.log("Camera cleanup success.");
+                                
+                                function uploadPhoto(imagefile, vImage) {
+                                    var imagefile = imagefile;
+                                    
+                                    function delete_images(){
+                                        navigator.camera.cleanup(onSuccess, onFail);
+                                        
+                                        function onSuccess() {
+                                            console.log("Camera cleanup success.");
+                                        }
+                                        
+                                        function onFail(message) {
+                                            alert('Failed because: ' + message);
+                                        }
+                                    }
+                                    //image transfer
+                                    // Verify server has been entered
+                                    server = document.getElementById('serverUrl').value;
+                                    if (server) {
+                                        // Specify transfer options
+                                        var options = new FileUploadOptions();
+                                        options.fileKey="file";
+                                        options.fileName=imagefile.substr(imagefile.lastIndexOf('/')+1);
+                                        //alert (options.fileName);
+                                        options.mimeType="image/jpeg";
+                                        options.chunkedMode = false;
+                                        // Transfer picture to server
+                                        var ft = new FileTransfer();
+                                        ft.upload(imagefile, server, function(r) {
+                                                  $('#example3').hide();
+                                                  document.getElementById('camera_status').innerHTML = "Image Upload successful ";
+                                                  // submit data form via ajax jquery
+                                                  // this is the id of the form
+                                                  var frm = $('#idForm');
+                                                  //frm.submit(function (ev) {
+                                                  $.ajax({
+                                                         type: frm.attr('method'),
+                                                         url: frm.attr('action'),
+                                                         data: frm.serialize(),
+                                                         success: function (data) {
+                                                         //alert('ok');
+                                                         }
+                                                         });
+                                                  localStorage.clear();
+                                                  $('#done').show();
+                                                  //})
+                                                  document.getElementById('camera_status').innerHTML = "Data Upload successful ";
+                                                  }, function(error) {
+                                                  document.getElementById('camera_status').innerHTML = "Upload failed: Code = "+error.code;
+                                                  }, options);
+                                    }
+                                    //image transfer end
+                                    
+                                    
                                 }
-                                
-                                function onFail(message) {
-                                    alert('Failed because: ' + message);
-                                }
-                            }
-                            //image transfer
-                            // Verify server has been entered
-                            server = document.getElementById('serverUrl').value;
-                            if (server) {
-                                
-                                // Specify transfer options
-                                var options = new FileUploadOptions();
-                                options.fileKey="file";
-                                options.fileName=imagefile.substr(imagefile.lastIndexOf('/')+1);
-                                
-                                alert (options.fileName);
-                                options.mimeType="image/jpeg";
-                                options.chunkedMode = false;
-                                // Transfer picture to server
-                                var ft = new FileTransfer();
-                                ft.upload(imagefile, server, function(r) {
-                                          $('#example3').hide();
-                                          document.getElementById('camera_status').innerHTML = "Upload successful ";
-                                          }, function(error) {
-                                          document.getElementById('camera_status').innerHTML = "Upload failed: Code = "+error.code;
-                                          }, options);
-                            }
-                            //image transfer end
                             
                             
-                        }
-                        
-                        
-                        /**
-                         * Take picture with camera
-                         */
-                        function takePicture() {
-                            navigator.camera.getPicture(
-                                                        function(uri) {
-                                                        var img = document.getElementById('camera_image');
-                                                        img.style.visibility = "visible";
-                                                        img.style.display = "block";
-                                                        img.src = uri;
-                                                        document.getElementById('camera_status').innerHTML = "Success";
-                                                        },
-                                                        function(e) {
-                                                        console.log("Error getting picture: " + e);
-                                                        document.getElementById('camera_status').innerHTML = "Error getting picture.";
-                                                        },
-                                                        { quality : 50, destinationType : Camera.DestinationType.FILE_URI });
-                                                        
-                        };
-                        
-
-                        
-                            </script>
-                        <input id="serverUrl" type="hidden" value="http://actualizedev.com/vsag/process/upload.php" />
+                            /**
+                             * Take picture with camera
+                             */
+                            function takePicture() {
+                                navigator.camera.getPicture(
+                                                            function(uri) {
+                                                            var img = document.getElementById('camera_image');
+                                                            img.style.visibility = "visible";
+                                                            img.style.display = "block";
+                                                            img.src = uri;
+                                                            document.getElementById('camera_status').innerHTML = "Success";
+                                                            },
+                                                            function(e) {
+                                                            console.log("Error getting picture: " + e);
+                                                            document.getElementById('camera_status').innerHTML = "Error getting picture.";
+                                                            },
+                                                            { quality : 50, destinationType : Camera.DestinationType.FILE_URI });
+                                                            
+                            };
+                            
+                                </script>
+                            <input id="serverUrl" type="hidden" value="http://actualizedev.com/vsag/process/upload.php" />
                         </div>
                         
                         <div id="appendedLS1"></div>
-                        <script type="text/javascript">
+                        <script>
                             for (var y = 0; y < localStorage.length; y++) {
                                 var lsKey = localStorage.key(y);
                                 var lsValue = localStorage.getItem(localStorage.key(y));
@@ -172,50 +184,52 @@
                                     $("#appendedLS1").append("<img width=25 name='" + lsKey + "' src='" + lsValue + "' id='" + lsKey + "' style='display:none;'/>");
                                 }
                             }
-                                for (var i = 0; i < localStorage.length; i++) {
-                                    var lsKey = localStorage.key(i);
-                                    var lsValue = localStorage.getItem(localStorage.key(i));
-                                    $("#appendedLS").append("<input type='hidden' name='" + lsKey + "' value='" + lsValue + "'/>");
-                                }
+                        </script>
+                        <script type="text/javascript">
+                            for (var i = 0; i < localStorage.length; i++) {
+                                var lsKey = localStorage.key(i);
+                                var lsValue = localStorage.getItem(localStorage.key(i));
+                                $("#appendedLS").append("<input type='hidden' name='" + lsKey + "' value='" + lsValue + "'/>");
+                            }
+                        </script>
+                        <script type="text/javascript">
+                            setInterval(function(){
+                                        if(navigator.onLine){
+                                        var connection = "online";
+                                        } else{
+                                        var connection = "offline";
+                                        }
+                                        if (connection == "offline") {
+                                        $("#submit").css("display", "none");
+                                        $(".trouble").css("display", "block");
+                                        }
+                                        else if (connection == "online") {
+                                        $("#submit").css("display", "block");
+                                        $(".trouble").css("display", "none");
+                                        }
+                                        
+                                        },1000);
                             </script>
-                            <script type="text/javascript">
-                                setInterval(function(){
-                                            if(navigator.onLine){
-                                            var connection = "online";
-                                            } else{
-                                            var connection = "offline";
-                                            }
-                                            if (connection == "offline") {
-                                            $("#submit").css("display", "none");
-                                            $(".trouble").css("display", "block");
-                                            }
-                                            else if (connection == "online") {
-                                            $("#submit").css("display", "block");
-                                            $(".trouble").css("display", "none");
-                                            }
-                                            
-                                            },1000);
-                            </script>
-
-                            <input id="serverUrl" type="hidden" value="http://actualizedev.com/vsag/process/upload.php" />
-                        </div>
+                        
+                        <input id="serverUrl" type="hidden" value="http://actualizedev.com/vsag/process/upload.php" />
                     </div>
-                    <!-- Header ends -->
-                    
-                    <!-- maincontent Starts -->
-                    <div class="maincontent"> </div>
-                    <!-- maincontent ends --> 
-                    
-                    <!-- footer starts -->
-                    <div id="footer"> </div>
-                    <!-- footer ends -->
-                    
                 </div>
-                <!-- container ends --> 
+                <!-- Header ends -->
+                
+                <!-- maincontent Starts -->
+                <div class="maincontent"> </div>
+                <!-- maincontent ends -->
+                
+                <!-- footer starts -->
+                <div id="footer"> </div>
+                <!-- footer ends -->
                 
             </div>
-            <!-- main-container ends --> 
+            <!-- container ends -->
             
+        </div>
+        <!-- main-container ends -->
+        
         </div>
         <!-- wrapper ends -->
         
