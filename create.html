@@ -7,9 +7,11 @@
                 <!-- SET: SCRIPTS -->
                 <!-- Pre set by XHTML CHOP -->
                 <script src="js/jquery-1.8.3.js" type="text/javascript"></script>
+                <script src="js/jquery.validate.js" type="text/javascript"></script>
                 <script src="js/css3-mediaqueries.js" type="text/javascript"></script>
                 <script src="js/modernizr.js" type="text/javascript"></script>
                 <script type="text/javascript" src="js/jquery.ddslick.js"> </script>
+                <script type="text/javascript" src="jquery.validate.min.js"> </script>
                 <script type="text/javascript" src="js/jquery.sidr.min.js"> </script>
                 
                 <!-- SET: FAVICON -->
@@ -23,7 +25,9 @@
                 <link href="css/style.css" rel="stylesheet" type="text/css" media="all">
                 <link href="css/responsive.css" rel="stylesheet" type="text/css" media="all">
                 <!-- END: STYLESHEET -->
-                                    
+                <script>
+                    $("#basicInfo").validate();
+                </script>                    
                 <!-- Custom Actualize Studio JS Files -->
                 <script src="cordova.js"></script>
                 <script type"text/javascript" src="cordova_plugins.js"></script>
@@ -84,6 +88,7 @@ for (var x = 2; x <= 247; x++){
 
 
                 </script>
+                
                 <!-- Header JAVASCRIPT -->
                                     
                 <!-- END: SCRIPTS -->
@@ -97,7 +102,7 @@ for (var x = 2; x <= 247; x++){
                 .dropdown2 .ddChild {behavior:url(PIE.htc); border-radius: 4px; box-shadow: 0px 1px 3px 0px rgba(119, 119, 119, 0.75) !important;}
                 </style>
                 <![endif]-->
-                
+                <script type="text/javascript" src="gen_validatorv4.js"> </script>
     </head>
     <body>
     <!-- wrapper starts -->
@@ -126,8 +131,16 @@ for (var x = 2; x <= 247; x++){
                                 </script>
                                 <input name="" type="submit" class="button" id="storeData">
                             </form>
+                            <script type="text/javascript">
+                                var frmvalidator  = new Validator("basicInfo");
+                                    frmvalidator.addValidation("client","req","Please enter the Client's Name");
+                                    frmvalidator.addValidation("email","req","Please enter the Client's Email");
+                                    frmvalidator.addValidation("number","req","Please enter the Client's Phone Number");
+                                    frmvalidator.addValidation("date","req","Please enter the Date");
+                            </script>
                         </div>
                     </div>
+                    
                     <!-- Header ends -->
                     
                     <!-- maincontent Starts -->
