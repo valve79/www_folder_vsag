@@ -44,7 +44,7 @@
                                                 //McDOn(str);
                                                 $.ajax({
                                                        type: 'POST',
-                                                       url: 'http://actualizevps.com/vsag/admin/loginmobile.php',
+                                                       url: 'http://vsag.actualizevps.com/loginmobile.php',
                                                        crossDomain: true,
                                                        data:  {user: e, password :p},
                                                        dataType: 'json',
@@ -53,6 +53,7 @@
                                                        //alert ("response");
                                                        if (response.success) {
                                                        //alert("you're logged in");
+                                                       window.localStorage["user_id"] = response.UserId;
                                                        window.localStorage["user"] = e;
                                                        //window.localStorage["password"] = md5(p);
                                                        //window.localStorage["UID"] = data.uid;
